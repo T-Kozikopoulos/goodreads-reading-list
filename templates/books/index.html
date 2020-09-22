@@ -1,0 +1,39 @@
+{% extends 'books/base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <div class="text-center">
+            <h2>Insert a new entry to your bookself</h2>
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{ form | linebreaks }}
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary align-center">Add To Reading List</button>
+                </div>
+            </form>
+        </div>
+        <br><br>
+        <h2 class="text-center">My Reading List</h2>
+        <br>
+        <div class="container booklist">
+            {% for book in books %}
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a href="{% url 'delete_book' pk=book.pk %}" class="delete-button">
+                            <button class="btn btn-danger">X</button>
+                        </a>
+                        <button class="btn btn-link text-secondary" onclick=" window.open('{{ book.url }}','_blank')">
+                            <h3><u>{{ book.title }}</u></h3>
+                            <i class="float-right">by {{ book.author }}</i>
+                        </button>
+                    </div>
+                </div>
+                <hr>
+            {% empty %}
+                <h3 class="bg-dark">There's nothing to see here. Your list is empty.</h3>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
