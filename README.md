@@ -1,6 +1,6 @@
 # goodreads-reading-list
 A reading list app for keeping track of the books you want to read in the future. Made with Python using the Django framework.
-Check iit out at [goodreads-bookshelf.herokuapp.com](goodreads-bookshelf.herokuapp.com).
+Check it out at goodreads-bookshelf.herokuapp.com.
 
 Index Page
 
