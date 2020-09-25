@@ -3,7 +3,7 @@ import os
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'i244jvvg6k7q+4ik_!o7&2ja7aaubj^)ftf$$8_csvp-@+s!8v'
+SECRET_KEY = '[Add a key here]'
 DEBUG = True
 ALLOWED_HOSTS = []
 
